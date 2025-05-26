@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import discord # Necessary library
 
 # Whatever the hell this does lol
-intents = discord.Integration.default()
+intents = discord.Intents.default()
 intents.message_content = True
 
 # Get the discord token from the .env
@@ -23,5 +23,8 @@ async def on_message(message): # Triggers for every message received
     
     if message.content.startswith('Hey James'): # If message content starts with "Hey James" it sends "Hi!"
         await message.channel.send("Hi!")
+    
+    if message.content.startswith('How are you James'): # If message content starts with "Hey James" it sends "Hi!"
+        await message.channel.send("https://t4.ftcdn.net/jpg/05/30/60/81/360_F_530608119_qESsC0SUS0jIrWNxRDQ6kY3mAImAl3sO.jpg")
         
-client.run("token") # Insert token here
+client.run(token) # Insert token here
